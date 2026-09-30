@@ -104,7 +104,7 @@ $$
 DF_t = \frac{1}{(1 + r)^t}
 $$
 
-Where $\r$ is interest rate at origination and $\t$ is a given future time horizon.
+Where $$\r$$ is interest rate at origination and $$\t$$ is a given future time horizon.
 
 ## ECL
 
