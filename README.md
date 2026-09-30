@@ -104,7 +104,7 @@ $$
 DF_t = \frac{1}{(1 + r)^t}
 $$
 
-Where $$\r$$ is interest rate at origination and $$\t$$ is a given future time horizon.
+Where $r$ is interest rate at origination and $t$ is a given future time horizon.
 
 ## ECL
 
@@ -124,7 +124,7 @@ $$
 h = 1-(1-PD_{12m})^{1/12}
 $$
 
-The probability of default in month $\t$ is then:
+The probability of default in month $t$ is then:
 
 $$
 p_t = h(1-h)^{t-1}
