@@ -555,7 +555,7 @@ The second table shows how the raw and calibrated probabilities vary month-by-mo
 
 ## Reestimated XGBoost PD Models
 
-For the reestimated PD Modelling, the previous training set was extended up 2024. For the reestimated LGD Modelling, the previous training set also absorbed the validations set and covers 2015 - 2023. The corresponding test sets remained unchanged and the new results are presented below. For this part, only XGBoost was considered.
+For the reestimated PD Modelling, the previous training set was extended up 2024. The corresponding test set remained unchanged and the new results are presented below. For this part, only XGBoost was considered.
 
 <img width="1245" height="764" alt="Снимок экрана — 2026-09-30 в 18 08 16" src="https://github.com/user-attachments/assets/5594fe2c-4bf9-4617-a5f1-00e5a6583418" />
 
@@ -576,10 +576,49 @@ For the reestimated PD Modelling, the previous training set was extended up 2024
 
 ## ECL
 
+The first table shows the average risk characteristics across ten PD deciles. Higher risk groups have lower credit scores and higher DTI, LTV, ELTV and LGD while average Loan Age and EAD decrease.
 
+| PD Decile |  Mean PD | Mean Credit Score | Mean DTI | Mean LTV | Mean ELTV | Mean Loan Age |   Mean EAD |
+| --------: | -------- | ----------------- | -------- | -------- | --------- | ------------- | ---------- |
+|         1 | 0.000001 |            770.00 |    30.54 |    57.49 |     17.73 |        131.11 | 165276.24  |
+|         2 | 0.000003 |            767.60 |    31.18 |    64.30 |     19.97 |        131.23 | 143510.58  |
+|         3 | 0.000004 |            765.26 |    31.68 |    66.65 |     20.78 |        131.28 | 133965.33  |
+|         4 | 0.000007 |            762.61 |    32.46 |    69.24 |     22.10 |        131.14 | 129925.92  |
+|         5 | 0.000010 |            758.64 |    33.15 |    70.37 |     22.82 |        131.11 | 123758.79  |
+|         6 | 0.000015 |            754.27 |    33.53 |    71.97 |     23.72 |        131.01 | 117196.66  |
+|         7 | 0.000024 |            749.40 |    34.33 |    73.56 |     24.82 |        130.71 | 113516.03  |
+|         8 | 0.000042 |            743.77 |    34.83 |    74.91 |     25.90 |        130.53 | 106101.43  |
+|         9 | 0.000088 |            734.09 |    35.34 |    77.67 |     27.55 |        129.67 | 100880.38  |
+|        10 | 0.000835 |            714.88 |    35.24 |    84.64 |     30.40 |        127.68 |  91470.87  |
+
+The second table shows the distribution of ECL across these risk groups. ECL is highly concentrated in the highest-risk exposures, with the top PD decile accounting for approximately 72% of total estimated ECL.
+
+| PD Decile | Loans |  Mean PD | Mean LGD |   Mean EAD | Mean ECL | Total ECL | ECL Share | Mean Stage |
+| --------- | ----- | -------- | -------- | ---------- | -------- | --------- | --------- | ---------- |
+|         1 | 8,302 | 0.000001 | 0.092632 | 165276.24 | 0.016463 |    136.67 |  0.001473 |   1.000000 |
+|         2 | 8,301 | 0.000003 | 0.100978 | 143510.58 | 0.033300 |    276.42 |  0.002979 |   1.000241 |
+|         3 | 8,301 | 0.000004 | 0.106653 | 133965.33 | 0.052964 |    439.65 |  0.004738 |   1.000723 |
+|         4 | 8,301 | 0.000007 | 0.107038 | 129925.92 | 0.078039 |    647.80 |  0.006981 |   1.002530 |
+|         5 | 8,302 | 0.000010 | 0.110169 | 123758.79 | 0.115935 |    962.49 |  0.010372 |   1.001686 |
+|         6 | 8,301 | 0.000015 | 0.113210 | 117196.66 | 0.169146 |  1404.08  |  0.015130 |   1.004819 |
+|         7 | 8,301 | 0.000024 | 0.116853 | 113516.03 | 0.268496 |  2228.78  |  0.024017 |   1.007108 |
+|         8 | 8,301 | 0.000042 | 0.120015 | 106101.43 | 0.440184 |  3653.97  |  0.039375 |   1.013251 |
+|         9 | 8,301 | 0.000088 | 0.129452 | 100880.38 | 1.956776 | 16243.19  |  0.175034 |   1.025780 |
+|        10 | 8,302 | 0.000835 | 0.160908 |  91470.87 | 8.047119 | 66807.18  |  0.719903 |   1.076969 |
 
 # Discussion
 
 ## PD Modelling
 
+## LGD Modelling
+
+## Calibration
+
+## PSI
+
 - PSI results (loan_age 5.95, months_to_legal_maturity 7.78 and eltv 2.34 with much high PSI, the first 2 removed and results got better while removing eltv caused significant drop in results. The other numeric features PSI between 0 and 0.5, while even <0.25 considered to be large, removal of this metrics caused only deterioration)
+
+## ECL
+
+- ECL (risk groups, the only default is in the 9th risk group out of 10 with pd = 0.000063)
+- Can see almost a monodic relation in both ECL result tables (worse credit score + higher economic metrics lead to higher risk), (higher risk loans have higher LGD, lower EAD, but still higher ECL), (mean stage tells us that there are more loans with stage 2 as higher the risk group is)
