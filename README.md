@@ -150,10 +150,38 @@ A key challenge in credit risk modelling is that defaults are relatively rare co
 
 Another important distinction is between discrimination and calibration. A model can rank borrowers effectively, meaning that higher predicted PDs generally correspond to higher default risk, but still produce probabilities that are too high or too low. This distinction is important when model outputs are used directly in ECL calculations since the absolute level of PD affects the estimated loss.
 
-Finally, credit portfolios change over time. Changes in borrower characteristics, loan composition, economic conditions and portfolio ageing can cause the population on which a model is applied to differ from the population used during development. Monitoring this population/feature drift and evaluating model performance on later observations are therefore important parts of credit risk model development. In this project, temporal validation, out-of-time testing and feature stability analysis are used to investigate whether the models remain useful as the portfolio evolves.
+Finally, credit portfolios change over time. Changes in borrower characteristics, loan composition, economic conditions and portfolio ageing can cause the population on which a model is applied to differ from the population used during development. Monitoring this population/feature drift and evaluating model performance on later observations are therefore important parts of credit risk model development. In this project, feature stability analysis is used to investigate whether the models remain useful as the portfolio evolves.
 
 # Structure
 
 # Results
+
+## PD Modelling
+
+### Logistic Regression
+
+### XGBoost
+
+### Random Forest
+
+### LightGBM
+
+## PSI
+
+Population Stability Index
+
+## PD Calibration
+
+## LGD Modelliing
+
+### Historical Mean Average
+
+### XGBoost
+
+### Random Forest
+
+### LightGBM
+
+## ECL
 
 # Discussion
