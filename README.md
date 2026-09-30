@@ -169,7 +169,7 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 <img width="1235" height="749" alt="Снимок экрана — 2026-09-30 в 14 56 57" src="https://github.com/user-attachments/assets/7b5a279a-d772-484c-974c-1934cc0b31df" />
 
 <img width="1250" height="733" alt="Снимок экрана — 2026-09-30 в 14 57 52" src="https://github.com/user-attachments/assets/1279c9bb-219a-42df-8313-048268e3be83" />
-
+|         |       |
 | ------- | ----- |
 | ROC-AUC | 0.948 |
 | PR-AUC  | 0.351 |
@@ -184,6 +184,7 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 <img width="1241" height="755" alt="Снимок экрана — 2026-09-30 в 14 58 30" src="https://github.com/user-attachments/assets/808ed2cd-3a20-4b13-82f5-2755bfe5b521" />
 
+|         |       |
 | ------- | ----- |
 | ROC-AUC | 0.938 |
 | PR-AUC  | 0.189 |
