@@ -162,9 +162,11 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 For the PD Modelling, the dataset was splitted in the following way: training - from 2015 to 2023, validation - 2024 and test - January through March 2025. 
 
+For each of the four models, the results are divided into three subsections - Validation and Test Set results as well as Monthly Performance. In each of the first two subsections, there are two plots - ROC-AUC and PR-AUC curve plots. There is also a table with metrics that will be taken into account upon model evaluation. Finally, the Monthly Performance subsection demonstrates how the evaluation metrics evolve across the validation and test set month-by-month.
+
 ### Logistic Regression
 
-#### Validation Test
+#### Validation Set
 
 <img width="1258" height="763" alt="Снимок экрана — 2026-09-30 в 16 10 50" src="https://github.com/user-attachments/assets/473b89c0-4aa8-4ee9-bee2-669c84974055" />
 
@@ -374,6 +376,10 @@ For the PD Modelling, the dataset was splitted in the following way: training - 
 
 For the LGD Modelling, the dataset was splitted in the following way: training - from 2015 to 2021, validation - from 2022 to 2023 and test - from 2024 to March 2025.
 
+For each of the four models, the results are divided into three subsections - Validation and Test Set results as well as Annual Performance. In each of the first two subsections, there is a plot - Realised vs Actual LGD. There is also a table with metrics that will be taken into account upon model evaluation. Finally, the Annual Performance subsection demonstrates how the evaluation metrics evolve across the validation and test set year-by-year.
+
+The Realised vs Actual LGD plot should be regarded as following: each scatter point represents a loan. If the point lies on the reference line, the predicted LGD is exactly right. The point being above/under the line means that the LGD estimate was higher/lower than the actual LGD.
+
 ### Historical Mean Average
 
 #### Validation Set
@@ -528,17 +534,24 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 
 ## XGBoost PD Calibration
 
+Below are the results of calibrating raw XGBoost Test (January - March 2025) probabilities on the Validation Set (2024). The graph shows the calibration plot. The reference line represents a perfect calibration. The calibration curve being below the reference line imply that the calibrated probabilities are lower than the actual default rate and the model underpredicts it. 
+
+<img width="1300" height="775" alt="Снимок экрана — 2026-09-30 в 18 52 25" src="https://github.com/user-attachments/assets/4db4a25b-8c89-450c-8048-cd84275db753" />
+
+The first table below demonstrates how the raw vs calibrated probabilities as well as other metrics. Notice how the ROC-AUC and PR-AUC remain unchanged while the Brier Score and Log Loss decrease.
+
 |                    | ROC-AUC | PR-AUC | Brier Score | Log Loss | Actual Default Rate | Average Predicted Default Rate |
 | ------------------ | ------- | ------ | ----------- | -------- | ------------------- | ------------------------------ |
 | Before Calibration | 0.938   | 0.189  | 0.000288    | 0.00229  | 0.000312            | 5.12e-5                        |
 | After Calibration  | 0.938   | 0.189. | 0.000283    | 0.00189  | 0.000312            | 0.000283                       |
 
-| Month   | Defaults | Observations | Avg. Predicted PD | Avg. Predicted Calibrated PD | Actual Default Rate | ROC-AUC | PR-AUC |
-| ------- | -------- | ------------ | ----------------- |----------------------------- | ------------------- | ------- | ------ |
-| 2024-01 |       33 |       92410  |           0.0058% |    0.0292%                   |             0.0422% |   0.975 |  0.072 |
-| 2024-02 |       30 |       91773  |           0.0052% |    0.0288%                   |             0.0337% |   0.975 |  0.104 |
-| 2024-03 |       23 |       91075  |           0.0044% |    0.0270%                   |             0.0469% |   0.956 |  0.083 |
+The second table shows how the raw and calibrated probabilities vary month-by-month.
 
+| Month   | Defaults | Observations | Avg. Predicted PD | Avg. Predicted Calibrated PD | Actual Default Rate | 
+| ------- | -------- | ------------ | ----------------- |----------------------------- | ------------------- |
+| 2025-01 |       33 |       92410  |           0.0058% |    0.0292%                   |             0.0422% |
+| 2025-02 |       30 |       91773  |           0.0052% |    0.0288%                   |             0.0337% |
+| 2025-03 |       23 |       91075  |           0.0044% |    0.0270%                   |             0.0469% |
 
 ## Reestimated XGBoost PD Models
 
