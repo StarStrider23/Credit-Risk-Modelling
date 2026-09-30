@@ -164,6 +164,55 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 ### XGBoost
 
+#### Validation Set
+
+<img width="1235" height="749" alt="Снимок экрана — 2026-09-30 в 14 56 57" src="https://github.com/user-attachments/assets/7b5a279a-d772-484c-974c-1934cc0b31df" />
+
+<img width="1250" height="733" alt="Снимок экрана — 2026-09-30 в 14 57 52" src="https://github.com/user-attachments/assets/1279c9bb-219a-42df-8313-048268e3be83" />
+
+| ------- | ----- |
+| ROC-AUC | 0.948 |
+| PR-AUC  | 0.351 |
+| Brier Score | 0.000326 |
+| Log Loss | 0.00243 |
+| Average Predicted Default Rate | 8.41e-05 |
+| Actual Default Rate | 0.000398 |
+
+#### Test Set
+
+<img width="1262" height="767" alt="Снимок экрана — 2026-09-30 в 14 59 09" src="https://github.com/user-attachments/assets/0a07ba0c-170b-44c6-a0c3-aa1efa540106" />
+
+<img width="1241" height="755" alt="Снимок экрана — 2026-09-30 в 14 58 30" src="https://github.com/user-attachments/assets/808ed2cd-3a20-4b13-82f5-2755bfe5b521" />
+
+| ------- | ----- |
+| ROC-AUC | 0.938 |
+| PR-AUC  | 0.189 |
+| Brier Score | 0.000288 |
+| Log Loss | 0.00229 |
+| Average Predicted Default Rate | 5.13e-05 |
+| Actual Default Rate | 0.000312 |
+
+#### Monthly Predictions
+
+| Month   | Defaults | Observations | Avg. Predicted PD | Actual Default Rate | ROC-AUC | PR-AUC |
+| ------- | -------- | ------------ | ----------------- | ------------------- | ------- | ------ |
+| 2024-01 |       29 |       68761  |           0.0162% |             0.0422% |   0.982 |  0.613 |
+| 2024-02 |       23 |       68268  |           0.0108% |             0.0337% |   0.983 |  0.533 |
+| 2024-03 |       32 |       68173  |           0.0101% |             0.0469% |   0.960 |  0.373 |
+| 2024-04 |       31 |       67824  |           0.0087% |             0.0457% |   0.962 |  0.433 |
+| 2024-05 |       32 |       67391  |           0.0084% |             0.0475% |   0.946 |  0.314 |
+| 2024-06 |       30 |       67035  |           0.0083% |             0.0448% |   0.935 |  0.301 |
+| 2024-07 |       23 |       66369  |           0.0071% |             0.0347% |   0.939 |  0.346 |
+| 2024-08 |       21 |       66129  |           0.0062% |             0.0318% |   0.941 |  0.228 |
+| 2024-09 |       22 |       65540  |           0.0075% |             0.0336% |   0.938 |  0.350 |
+| 2024-10 |       27 |       65444  |           0.0064% |             0.0413% |   0.921 |  0.297 |
+| 2024-11 |       24 |       65042  |           0.0049% |             0.0369% |   0.938 |  0.158 |
+| 2024-12 |       21 |       64024  |           0.0056% |             0.0328% |   0.918 |  0.255 |
+| 2025-01 |       33 |       92410  |           0.0058% |             0.0357% |   0.937 |  0.234 |
+| 2025-02 |       30 |       91773  |           0.0052% |             0.0327% |   0.934 |  0.172 |
+| 2025-03 |       23 |       91075  |           0.0044% |             0.0253% |   0.944 |  0.163 |
+
+
 ### Random Forest
 
 ### LightGBM
