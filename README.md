@@ -162,6 +162,56 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 ### Logistic Regression
 
+#### Validation Test
+
+<img width="1264" height="745" alt="Снимок экрана — 2026-09-30 в 15 41 41" src="https://github.com/user-attachments/assets/4525cd3c-ca40-4390-9615-654a55f37083" />
+
+<img width="1259" height="740" alt="Снимок экрана — 2026-09-30 в 15 41 12" src="https://github.com/user-attachments/assets/9571c283-4a79-4923-9cee-a175a94106a2" />
+
+|         |       |
+| ------- | ----- |
+| ROC-AUC | 0.943 |
+| PR-AUC  | 0.0765 |
+| Brier Score | 0.000293 |
+| Log Loss | 0.130 |
+| Average Predicted Default Rate | 0.0746 |
+| Actual Default Rate | 0.000398 |
+
+#### Test Set
+
+<img width="1262" height="767" alt="Снимок экрана — 2026-09-30 в 14 59 09" src="https://github.com/user-attachments/assets/9e9c28f0-e14a-4322-995e-6ebf90232083" />
+
+<img width="1259" height="765" alt="Снимок экрана — 2026-09-30 в 15 42 43" src="https://github.com/user-attachments/assets/e67433c2-2a57-468f-ba49-1c71df55e8e7" />
+
+|         |       |
+| ------- | ----- |
+| ROC-AUC | 0.933 |
+| PR-AUC  | 0.0504 |
+| Brier Score | 0.000284 |
+| Log Loss | 0.126 |
+| Average Predicted Default Rate | 0.0722 |
+| Actual Default Rate | 0.000312 |
+
+#### Monthly Predictions
+
+| Month   | Defaults | Observations | Avg. Predicted PD | Actual Default Rate | ROC-AUC | PR-AUC |
+| ------- | -------- | ------------ | ----------------- | ------------------- | ------- | ------ |
+| 2024-01 |       29 |       68761  |             7.94% |             0.0422% |   0.975 |  0.072 |
+| 2024-02 |       23 |       68268  |             7.87% |             0.0337% |   0.975 |  0.104 |
+| 2024-03 |       32 |       68173  |             7.86% |             0.0469% |   0.956 |  0.083 |
+| 2024-04 |       31 |       67824  |             7.68% |             0.0457% |   0.962 |  0.103 |
+| 2024-05 |       32 |       67391  |             7.42% |             0.0475% |   0.949 |  0.084 |
+| 2024-06 |       30 |       67035  |             7.31% |             0.0448% |   0.930 |  0.087 |
+| 2024-07 |       23 |       66369  |             7.27% |             0.0347% |   0.938 |  0.058 |
+| 2024-08 |       21 |       66129  |             7.24% |             0.0318% |   0.907 |  0.041 |
+| 2024-09 |       22 |       65540  |             7.33% |             0.0336% |   0.951 |  0.094 |
+| 2024-10 |       27 |       65444  |             7.24% |             0.0413% |   0.923 |  0.096 |
+| 2024-11 |       24 |       65042  |             7.19% |             0.0369% |   0.932 |  0.068 |
+| 2024-12 |       21 |       64024  |             7.16% |             0.0328% |   0.894 |  0.098 |
+| 2025-01 |       33 |       92410  |             7.29% |             0.0357% |   0.933 |  0.081 |
+| 2025-02 |       30 |       91773  |             7.26% |             0.0327% |   0.926 |  0.048 |
+| 2025-03 |       23 |       91075  |             7.10% |             0.0253% |   0.941 |  0.030 |
+
 ### XGBoost
 
 #### Validation Set
@@ -176,8 +226,8 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 | PR-AUC  | 0.351 |
 | Brier Score | 0.000326 |
 | Log Loss | 0.00243 |
-| Average Predicted Default Rate | 8.41e-05 |
-| Actual Default Rate | 0.000398 |
+| Average Predicted Default Rate | 8.41e-5 |
+| Actual Default Rate | 3.98e-4 |
 
 #### Test Set
 
@@ -191,8 +241,8 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 | PR-AUC  | 0.189 |
 | Brier Score | 0.000288 |
 | Log Loss | 0.00229 |
-| Average Predicted Default Rate | 5.13e-05 |
-| Actual Default Rate | 0.000312 |
+| Average Predicted Default Rate | 5.13e-5 |
+| Actual Default Rate | 3.12e-4 |
 
 #### Monthly Predictions
 
