@@ -610,13 +610,17 @@ The second table shows the distribution of ECL across these risk groups. ECL is 
 
 ## PD Modelling
 
+The PD models showed strong discrimination overall with ROC-AUC above 0.90 for almost all model and dataset combinations. The main exception was the Random Forest on the test set, which achieved a ROC-AUC of 0.881. On the other hadn't, PR-AUC provided a different picture. The Logistic Regression baseline performed poorly, with PR-AUC between approximately 0.05 and 0.07, while the more advanced models achieved substantially higher validation PR-AUC values of approximately 0.35–0.38. However, these results then deteriorated considerably on the test set where PR-AUC dropped to approximately 0.07 to 0.18. The monthly results also show a general deterioration in model performance over time, indicating limitations in temporal generalisation.
+
+Overall, the XGBoost model provided the strongest combination of ROC-AUC, PR-AUC, Brier Score and Log Loss and was therefore selected as the primary PD model. However, its raw predicted probabilities were not well calibrated. This highlights the distinction between discrimination and calibration. More precisely, a model can rank loans effectively, but still produce probabilities that do not accurately represent observed default rates. Since PD is directly used in the ECL calculation, probability calibration is of a particular importance for this project.
+
+Feature and population drift were also investigated using PSI. Some features, particularly loan age and months to legal maturity, showed very high PSI values. These variables are mechanically linked to the passage of time and removing them improved both validation and test performance. ELTV also showed substantial drift, but removing it resulted in worse model performance. This also highlights that PSI should be treated as a diagnostic rather than an automatic basis for feature removal. Target drift was also examined through monthly default rates, but the target stayed relatively stable and therefore couldn't fully explain the temporal deterioration. Therefore, while population and feature drift likely contribute to the changing performance, they do not fully explain the temporal deterioration observed in the models.
+
 ## LGD Modelling
 
 ## Calibration
 
-## PSI
-
-- PSI results (loan_age 5.95, months_to_legal_maturity 7.78 and eltv 2.34 with much high PSI, the first 2 removed and results got better while removing eltv caused significant drop in results. The other numeric features PSI between 0 and 0.5, while even <0.25 considered to be large, removal of this metrics caused only deterioration)
+## PD Model Reestimation
 
 ## ECL
 
