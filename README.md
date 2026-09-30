@@ -376,9 +376,45 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 
 ### Historical Mean Average
 
+#### Validation Set
+
+<img width="1277" height="788" alt="Снимок экрана — 2026-09-30 в 17 35 56" src="https://github.com/user-attachments/assets/53366230-9b2f-4fa8-bf12-6d9a8f3f003f" />
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.270 |
+| Mean Actual LGD  | 0.194 |
+| RMSE | 0.270 |
+| MAE | 0.242 |
+| Spearman Correlation | NaN |
+| Pearson Correlation | NaN |
+
+#### Test Set
+
+<img width="1251" height="747" alt="Снимок экрана — 2026-09-30 в 17 36 14" src="https://github.com/user-attachments/assets/c79b9315-62f4-43a4-8a27-c34f57ad2003" />
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.270 |
+| Mean Actual LGD  | 0.290 |
+| RMSE | 0.361 |
+| MAE | 0.297 |
+| Spearman Correlation | NaN |
+| Pearson Correlation | NaN |
+
+#### Annual Performance
+
+| Year | Average LGD | Average LGD Prediction |  RMSE |   MAE |
+| ---- | ----------- | ---------------------- | ----- | ----- |
+| 2021 |       0.039 |                  0.270 | 0.233 | 0.231 |
+| 2022 |       0.188 |                  0.270 | 0.263 | 0.234 |
+| 2023 |       0.229 |                  0.270 | 0.279 | 0.248 |
+| 2024 |       0.281 |                  0.270 | 0.344 | 0.281 |
+| 2025 |       0.301 |                  0.270 | 0.390 | 0.327 |
+
 ### XGBoost
 
-### Validation Set
+#### Validation Set
 
 <img width="1237" height="778" alt="Снимок экрана — 2026-09-30 в 16 41 48" src="https://github.com/user-attachments/assets/fa497ff8-b5ef-42ab-86c9-29b4a61d8631" />
 
@@ -391,7 +427,7 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 | Spearman Correlation | 0.608 |
 | Pearson Correlation | 0.641 |
 
-### Test Set
+#### Test Set
 
 <img width="1240" height="741" alt="Снимок экрана — 2026-09-30 в 16 42 08" src="https://github.com/user-attachments/assets/3954565a-ab01-4dc3-9d50-183e4a5bad31" />
 
@@ -416,7 +452,81 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 
 ### Random Forest
 
+#### Validation Set
+
+<img width="1252" height="775" alt="Снимок экрана — 2026-09-30 в 17 50 25" src="https://github.com/user-attachments/assets/a4d829e9-6052-4315-bb5f-68606d9c9f59" />
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.261 |
+| Mean Actual LGD  | 0.194 |
+| RMSE | 0.215 |
+| MAE | 0.183 |
+| Spearman Correlation | 0.625 |
+| Pearson Correlation | 0.692 |
+
+#### Test Set
+
+<img width="1271" height="761" alt="Снимок экрана — 2026-09-30 в 17 50 45" src="https://github.com/user-attachments/assets/a907e09f-1380-419d-b499-7baae00173d9" />
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.270 |
+| Mean Actual LGD  | 0.290 |
+| RMSE | 0.324 |
+| MAE | 0.264 |
+| Spearman Correlation | 0.439 |
+| Pearson Correlation | 0.508 |
+
+
+#### Annual Performance
+
+| Year | Average LGD | Average LGD Prediction |  RMSE |   MAE |
+| ---- | ----------- | ---------------------- | ----- | ----- |
+| 2021 |       0.039 |                  0.204 | 0.190 | 0.165 |
+| 2022 |       0.188 |                  0.261 | 0.200 | 0.171 |
+| 2023 |       0.229 |                  0.270 | 0.233 | 0.196 |
+| 2024 |       0.281 |                  0.283 | 0.310 | 0.260 |
+| 2025 |       0.301 |                  0.252 | 0.348 | 0.279 |
+
 ### LightGBM
+
+#### Validation Set
+
+<img width="1260" height="787" alt="Снимок экрана — 2026-09-30 в 17 55 44" src="https://github.com/user-attachments/assets/b3b81018-a767-45dd-b269-e1a6549cf92d" />
+
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.230 |
+| Mean Actual LGD  | 0.194 |
+| RMSE | 0.193 |
+| MAE | 0.137 |
+| Spearman Correlation | 0.652 |
+| Pearson Correlation | 0.682 |
+
+#### Test Set
+
+<img width="1258" height="756" alt="Снимок экрана — 2026-09-30 в 17 56 01" src="https://github.com/user-attachments/assets/ad19c881-8f0e-451a-aa40-8500e91aea46" />
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.255 |
+| Mean Actual LGD  | 0.290 |
+| RMSE | 0.330 |
+| MAE | 0.256 |
+| Spearman Correlation | 0.330 |
+| Pearson Correlation | 0.414 |
+
+#### Annual Performance
+
+| Year | Average LGD | Average LGD Prediction |  RMSE |   MAE |
+| ---- | ----------- | ---------------------- | ----- | ----- |
+| 2021 |       0.039 |                  0.105 | 0.095 | 0.066 |
+| 2022 |       0.188 |                  0.236 | 0.164 | 0.124 |
+| 2023 |       0.229 |                  0.245 | 0.230 | 0.161 |
+| 2024 |       0.281 |                  0.279 | 0.307 | 0.243 |
+| 2025 |       0.301 |                  0.218 | 0.364 | 0.280 |
 
 ## ECL
 
