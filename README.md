@@ -380,6 +380,8 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 
 ### Validation Set
 
+<img width="1237" height="778" alt="Снимок экрана — 2026-09-30 в 16 41 48" src="https://github.com/user-attachments/assets/fa497ff8-b5ef-42ab-86c9-29b4a61d8631" />
+
 |         |       |
 | ------- | ----- |
 | Mean Predicted LGD | 0.227 |
@@ -390,6 +392,8 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 | Pearson Correlation | 0.641 |
 
 ### Test Set
+
+<img width="1240" height="741" alt="Снимок экрана — 2026-09-30 в 16 42 08" src="https://github.com/user-attachments/assets/3954565a-ab01-4dc3-9d50-183e4a5bad31" />
 
 |         |       |
 | ------- | ----- |
