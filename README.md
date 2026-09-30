@@ -576,7 +576,7 @@ For the reestimated PD Modelling, the previous training set was extended up 2024
 
 ## ECL
 
-The first table shows the average risk characteristics across ten PD deciles. Higher risk groups have lower credit scores and higher DTI, LTV, ELTV and LGD while average Loan Age and EAD decrease.
+The first table shows the average risk characteristics across ten PD deciles, with the 10th group having the highest risk. Higher risk groups have lower credit scores and higher DTI, LTV, ELTV and LGD while average Loan Age and EAD decrease.
 
 | PD Decile |  Mean PD | Mean Credit Score | Mean DTI | Mean LTV | Mean ELTV | Mean Loan Age |   Mean EAD |
 | --------: | -------- | ----------------- | -------- | -------- | --------- | ------------- | ---------- |
