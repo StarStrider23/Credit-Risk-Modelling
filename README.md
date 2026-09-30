@@ -164,7 +164,7 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 #### Validation Test
 
-<img width="1264" height="745" alt="Снимок экрана — 2026-09-30 в 15 41 41" src="https://github.com/user-attachments/assets/4525cd3c-ca40-4390-9615-654a55f37083" />
+<img width="1258" height="763" alt="Снимок экрана — 2026-09-30 в 16 10 50" src="https://github.com/user-attachments/assets/473b89c0-4aa8-4ee9-bee2-669c84974055" />
 
 <img width="1259" height="740" alt="Снимок экрана — 2026-09-30 в 15 41 12" src="https://github.com/user-attachments/assets/9571c283-4a79-4923-9cee-a175a94106a2" />
 
