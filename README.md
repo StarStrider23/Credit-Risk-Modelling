@@ -160,7 +160,7 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 ## PD Modelling
 
-For the PD Modelling, the dataset was splitted in the following way: training - from 2015 to 2023, validation - 2024 and test - January through March 2025.
+For the PD Modelling, the dataset was splitted in the following way: training - from 2015 to 2023, validation - 2024 and test - January through March 2025. 
 
 ### Logistic Regression
 
@@ -478,7 +478,6 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 | Spearman Correlation | 0.439 |
 | Pearson Correlation | 0.508 |
 
-
 #### Annual Performance
 
 | Year | Average LGD | Average LGD Prediction |  RMSE |   MAE |
@@ -494,7 +493,6 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 #### Validation Set
 
 <img width="1260" height="787" alt="Снимок экрана — 2026-09-30 в 17 55 44" src="https://github.com/user-attachments/assets/b3b81018-a767-45dd-b269-e1a6549cf92d" />
-
 
 |         |       |
 | ------- | ----- |
@@ -528,17 +526,44 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 | 2024 |       0.281 |                  0.279 | 0.307 | 0.243 |
 | 2025 |       0.301 |                  0.218 | 0.364 | 0.280 |
 
+## XGBoost PD Calibration
+
+|                    | ROC-AUC | PR-AUC | Brier Score | Log Loss | Actual Default Rate | Average Predicted Default Rate |
+| ------------------ | ------- | ------ | ----------- | -------- | ------------------- | ------------------------------ |
+| Before Calibration | 0.938   | 0.189  | 0.000288    | 0.00229  | 0.000312            | 5.12e-5                        |
+| After Calibration  | 0.938   | 0.189. | 0.000283    | 0.00189  | 0.000312            | 0.000283                       |
+
+| Month   | Defaults | Observations | Avg. Predicted PD | Avg. Predicted Calibrated PD | Actual Default Rate | ROC-AUC | PR-AUC |
+| ------- | -------- | ------------ | ----------------- |----------------------------- | ------------------- | ------- | ------ |
+| 2024-01 |       33 |       92410  |           0.0058% |    0.0292%                   |             0.0422% |   0.975 |  0.072 |
+| 2024-02 |       30 |       91773  |           0.0052% |    0.0288%                   |             0.0337% |   0.975 |  0.104 |
+| 2024-03 |       23 |       91075  |           0.0044% |    0.0270%                   |             0.0469% |   0.956 |  0.083 |
+
+
+## Reestimated XGBoost PD Models
+
+For the reestimated PD Modelling, the previous training set was extended up 2024. For the reestimated LGD Modelling, the previous training set also absorbed the validations set and covers 2015 - 2023. The corresponding test sets remained unchanged and the new results are presented below. For this part, only XGBoost was considered.
+
+<img width="1245" height="764" alt="Снимок экрана — 2026-09-30 в 18 08 16" src="https://github.com/user-attachments/assets/5594fe2c-4bf9-4617-a5f1-00e5a6583418" />
+
+<img width="1248" height="782" alt="Снимок экрана — 2026-09-30 в 18 08 55" src="https://github.com/user-attachments/assets/4a8899d3-a3dc-4473-85a3-0ba40425c19a" />
+
+|         |       |
+| ------- | ----- |
+| ROC-AUC | 0.980 |
+| PR-AUC  | 0.624 |
+| Average Predicted Default Rate | 1.30e-4 |
+| Actual Default Rate | 3.12e-4 |
+
+| Month   | Defaults | Observations | Avg. Predicted PD | Actual Default Rate | ROC-AUC | PR-AUC |
+| ------- | -------- | ------------ | ----------------- | ------------------- | ------- | ------ |
+| 2025-01 |       33 |       92410  |           0.0158% |             0.0357% |   0.984 |  0.745 |
+| 2025-02 |       30 |       91773  |           0.0133% |             0.0327% |   0.980 |  0.588 |
+| 2025-03 |       23 |       91075  |           0.0101% |             0.0253% |   0.975 |  0.511 |
+
 ## ECL
 
-## PD Calibration
 
-## Reestimated XGBoost PD & LGD Models
-
-For the reestimated PD Modelling, the previous training set was extended up 2024. For the reestimated LGD Modelling, the previous training set also absorbed the validations set and covers 2015 - 2023. The corresponding test sets remained unchanged.
-
-### PD
-
-### LGD
 
 # Discussion
 
