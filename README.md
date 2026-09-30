@@ -160,6 +160,8 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 ## PD Modelling
 
+For the PD Modelling, the dataset was splitted in the following way: training - from 2015 to 2023, validation - 2024 and test - January through March 2025.
+
 ### Logistic Regression
 
 #### Validation Test
@@ -264,7 +266,6 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 | 2025-02 |       30 |       91773  |           0.0052% |             0.0327% |   0.934 |  0.172 |
 | 2025-03 |       23 |       91075  |           0.0044% |             0.0253% |   0.944 |  0.163 |
 
-
 ### Random Forest
 
 #### Validation Set
@@ -316,7 +317,6 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 | 2025-01 |       33 |       92410  |           0.3095% |             0.0357% |   0.893 |  0.116 |
 | 2025-02 |       30 |       91773  |           0.3115% |             0.0327% |   0.878 |  0.066 |
 | 2025-03 |       23 |       91075  |           0.3019% |             0.0253% |   0.867 |  0.077 |
-
 
 ### LightGBM
 
@@ -370,13 +370,45 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 | 2025-02 |       30 |       91773  |           0.1697% |             0.0327% |   0.927 |  0.147 |
 | 2025-03 |       23 |       91075  |           0.1554% |             0.0253% |   0.933 |  0.144 |
 
-## PD Calibration
-
 ## LGD Modelliing
+
+For the LGD Modelling, the dataset was splitted in the following way: training - from 2015 to 2021, validation - from 2022 to 2023 and test - from 2024 to March 2025.
 
 ### Historical Mean Average
 
 ### XGBoost
+
+### Validation Set
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.227 |
+| Mean Actual LGD  | 0.194 |
+| RMSE | 0.000724 |
+| MAE | 0.0036 |
+| Spearman Correlation | 0.608 |
+| Pearson Correlation | 0.641 |
+
+### Test Set
+
+|         |       |
+| ------- | ----- |
+| Mean Predicted LGD | 0.252 |
+| Mean Actual LGD  | 0.290 |
+| RMSE | 0.331|
+| MAE | 0.243 |
+| Spearman Correlation | 0.394 |
+| Pearson Correlation | 0.421 |
+
+### Annual Performance
+
+| Year |  Average LGD | Average LGD Prediction |  rmse  |  mae  |
+| ---- | ------------ | ---------------------- | ------ | ----- |
+| 2021 |   0.0394     |    0.114               |  0.093 | 0.074 |
+| 2022 |   0.188      |    0.233               |  0.182 | 0.134 |
+| 2023 |   0.229      |    0.239               |  0.230 | 0.158 |
+| 2024 |   0.281      |    0.290               |  0.321 | 0.244 |
+| 2025 |   0.301      |    0.199               |  0.348 | 0.248 |
 
 ### Random Forest
 
@@ -384,6 +416,18 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 
 ## ECL
 
+## PD Calibration
+
+## Reestimated XGBoost PD & LGD Models
+
+For the reestimated PD Modelling, the previous training set was extended up 2024. For the reestimated LGD Modelling, the previous training set also absorbed the validations set and covers 2015 - 2023. The corresponding test sets remained unchanged.
+
+### PD
+
+### LGD
+
 # Discussion
+
+## PD Modelling
 
 - PSI results (loan_age 5.95, months_to_legal_maturity 7.78 and eltv 2.34 with much high PSI, the first 2 removed and results got better while removing eltv caused significant drop in results. The other numeric features PSI between 0 and 0.5, while even <0.25 considered to be large, removal of this metrics caused only deterioration)
