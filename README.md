@@ -150,7 +150,7 @@ A key challenge in credit risk modelling is that defaults are relatively rare co
 
 Another important distinction is between discrimination and calibration. A model can rank borrowers effectively, meaning that higher predicted PDs generally correspond to higher default risk, but still produce probabilities that are too high or too low. This distinction is important when model outputs are used directly in ECL calculations since the absolute level of PD affects the estimated loss.
 
-Finally, credit portfolios change over time. Changes in borrower characteristics, loan composition, economic conditions and portfolio ageing can cause the population on which a model is applied to differ from the population used during development. Monitoring this population/feature drift and evaluating model performance on later observations are therefore important parts of credit risk model development. In this project, feature stability analysis is used to investigate whether the models remain useful as the portfolio evolves.
+Finally, credit portfolios change over time. Changes in borrower characteristics, loan composition and its ageing can cause the population on which a model is applied to differ from the population used during development. Monitoring this population/feature drift and evaluating model performance on later observations are therefore important parts of credit risk model development. 
 
 # Structure
 
@@ -165,10 +165,6 @@ Finally, credit portfolios change over time. Changes in borrower characteristics
 ### Random Forest
 
 ### LightGBM
-
-## PSI
-
-Population Stability Index
 
 ## PD Calibration
 
@@ -185,3 +181,5 @@ Population Stability Index
 ## ECL
 
 # Discussion
+
+- PSI results (loan_age 5.95, months_to_legal_maturity 7.78 and eltv 2.34 with much high PSI, the first 2 removed and results got better while removing eltv caused significant drop in results. The other numeric features PSI between 0 and 0.5, while even <0.25 considered to be large, removal of this metrics caused only deterioration)
