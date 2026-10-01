@@ -91,8 +91,10 @@ $$
 Whereas the EAD estimate is modelled simply as:
 
 $$
-EAD = \text{Zero Balance Removal UPB}
+EAD = \text{Current UPB}
 $$
+
+Where Current UPB matches Zero Balance Removal UPB if loan defaults.
 
 ## DF
 
