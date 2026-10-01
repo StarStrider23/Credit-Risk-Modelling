@@ -6,8 +6,6 @@ By Alexsey Chernichenko. September 2026.
 
 # Project Goal
 
-## Project Goal
-
 The goal of this project is to build a credit risk modelling pipeline using Freddie Mac’s Single Family Loan Level Dataset. Data cleaning and preparation were performed in PostgreSQL while Python was used to develop and evaluate machine learning (ML) models for 12-month Probability Default (PD) and Loss Given Default (LGD) prediction, using XGBoost, Random Forest and LightGBM. PD models were evaluated using ROC-AUC and PR-AUC, while probability calibration was assessed using Brier score and Log Loss. LGD models were evaluated using RMSE and MAE.
 
 The resulting PD and LGD estimates were then combined to calculate ECL using a simplified staging framework and Exposure At Default (EAD) assumption. The ECL methodology is **IFRS 9 inspired** rather than a full IFRS 9 implementation since the public dataset does not contain sufficient information to model all required information.
@@ -40,7 +38,7 @@ Because default is a rare event in the dataset, model performance was assessed t
 
 The data was split temporally rather than randomly in order to better reflect a real world model development process. Earlier observations were used for model development, while later periods were reserved for validation and testing. This also allowed the model's ability to generalise to newer loan populations to be assessed. Moreover, it was decided to work with a smaller sample rather than with the full dataset simply because training ML models on the full dataset turned out to be extremely time consuming.
 
-## PD Calibration & Model Stability
+## PD Calibration
 
 While ML models can provide strong risk ranking their raw probability estimates are not necessarily well calibrated. Logistic Regression was therefore used for calibration purposes to transform the model's raw PD estimates into probabilities that better correspond to observed default frequencies.
 
@@ -139,6 +137,24 @@ PD_t = 1-(1-h)^t
 $$
 
 These monthly probabilities allow the 12-month PD estimate to be extended over the remaining contractual maturity of an exposure when calculating a simplified lifetime ECL.
+
+## Logit Probability Calibration
+
+A model can be good at ranking observations by risk while still producing probabilities that do not accurately reflect the observed frequency of events. Probability calibration addresses this by adjusting raw predicted probabilities so that they better correspond to actual outcomes.
+
+One common approach is logit calibration, where predicted probabilities are transformed into log odds and a logistic regression is used to adjust their scale:
+
+$$
+\text{logit}(p) = \log \left( \frac{p}{1-p} \right)
+$$
+
+Then a logistic regression is fitted using the observed defaults:
+
+$$
+\text{logit}(p_{\text{cal}} = \alpha + \beta \text{logit}(p)
+$$
+
+Because the calibration transformation is monotonic, it preserves the relative ranking of observations. Consequently, discrimination measures such as ROC-AUC and PR-AUC stay unchanged, while probability related measures such as Brier Score and Log Loss improve.
 
 ## Staging Framework
 
@@ -642,5 +658,17 @@ Finally, it is worth mentioning that although the LGD model also showed some tem
 
 ## ECL
 
-- ECL (risk groups, the only default is in the 9th risk group out of 10 with pd = 0.000063)
-- Can see almost a monodic relation in both ECL result tables (worse credit score + higher economic metrics lead to higher risk), (higher risk loans have higher LGD, lower EAD, but still higher ECL), (mean stage tells us that there are more loans with stage 2 as higher the risk group is)
+The ECL results show a clear and almost monotonic relationship between predicted risk and the underlying risk characteristics and metrics. Across the PD deciles, higher risk groups have lower average credit scores and generally higher DTI, LTV and ELTV which is consistent with the characteristics expected for higher risk exposures. 
+
+The second table shows a similar pattern in the resulting ECL measures. Mean PD, LGD, ECL and mean stage generally increase with the risk decile. The increase in PD is particularly noticeable between the ninth and tenth deciles where mean PD rises from 0.000088 to 0.000835, making it almost 10 times larger. The gradual monotonic increase in mean stage also indicates that the higher risk groups include more Stage 2 loans which is consistent with the staging methodology. Overall, the highest risk decile contains approximately 10% of the loans but accounts for approximately 72% of total estimated ECL which is of course huge and clearly demonstrates a strong concentration of estimated losses among the highest risk loans.
+
+It's also worth mentioning that for the final ECL calculation, the reestimated PD model was calibrated using the January–March 2025 test period as this represented the most recent period with fully observable 12-month default outcomes. The calibrated PDs were then applied to the March 2026. 
+
+The March 2026 period contains only one observed default which falls in the ninth risk decile and has a predicted PD of 0.000063, below the average PD of 0.000088 for that decile. Given the very small number of observed defaults in the March 2026 snapshot this observation should not be interpreted as evidence of model miscalibration or validation performance. The ECL results should instead be viewed primarily as a forward looking application of the modelling framework rather than a direct validation against realised losses.
+
+Finally, a few words about EAD and loan age. The risk deciles show a gradual decrease in average loan age and EAD as predicted PD increases. The decrease in EAD is partly consistent with the definition of EAD used in this project, i.e. EAD is represented by current UPB. Mortgage balances generally decrease because borrowers repay their debt over time which means that loans with a lower UPB can have lower EAD even when their estimated probability of default is relatively high. Therefore, higher credit risk does not necessarily imply higher EAD.
+
+The relationship between loan age and predicted risk is less direct. The higher risk deciles contain loans with slightly lower average loan age. Recall that in this framework, credit risk deterioration is identified through delinquency staging. A loan can move to Stage 2 once it becomes 30 or more days past due. Consequently, the observed relationship between loan age and risk may simply reflect differences in when delinquency occurs, rather than implying that younger loans are inherently riskier.
+
+Importantly, the decrease in EAD does not result in lower estimated ECL for the higher risk groups. The higher the risk group, the higher is ECL. This can be explained by the substantially higher PD together with the increase in LGD which more than offsets the lower EAD. 
+
