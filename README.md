@@ -378,7 +378,7 @@ For the LGD Modelling, the dataset was splitted in the following way: training -
 
 For each of the four models, the results are divided into three subsections - Validation and Test Set results as well as Annual Performance. In each of the first two subsections, there is a plot - Realised vs Actual LGD. There is also a table with metrics that will be taken into account upon model evaluation. Finally, the Annual Performance subsection demonstrates how the evaluation metrics evolve across the validation and test set year-by-year.
 
-The Realised vs Actual LGD plot should be regarded as following: each scatter point represents a loan. If the point lies on the reference line, the predicted LGD is exactly right. The point being above/under the line means that the LGD estimate was higher/lower than the actual LGD.
+The Realised vs Actual LGD plot should be regarded as following: each scatter point represents a loan. If a point lies on the reference line, the predicted LGD is exactly right. A point being above/under the line means that the LGD estimate was higher/lower than the actual realised LGD.
 
 ### Historical Mean Average
 
