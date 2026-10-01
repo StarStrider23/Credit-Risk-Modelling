@@ -108,7 +108,7 @@ Where $r$ is interest rate at origination and $t$ is a given future time horizon
 
 ## ECL
 
-These components can be then combined to estimate expected credit loss. In its simplest form, the expected loss for an exposure can be expressed as:
+These components can be then combined to estimate expected credit loss for a given time horizon $t$, which can be expressed as:
 
 $$
 ECL_t = \sum_t PD_t \times LGD_t \times EAD_t \times DF_t
