@@ -151,7 +151,7 @@ $$
 Then a logistic regression is fitted using the observed defaults:
 
 $$
-\text{logit}(p_{\text{cal}} = \alpha + \beta \text{logit}(p)
+\text{logit}(p_{\text{cal}}) = \alpha + \beta \times \text{logit}(p)
 $$
 
 Because the calibration transformation is monotonic, it preserves the relative ranking of observations. Consequently, discrimination measures such as ROC-AUC and PR-AUC stay unchanged, while probability related measures such as Brier Score and Log Loss improve.
