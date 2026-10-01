@@ -428,8 +428,8 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 | ------- | ----- |
 | Mean Predicted LGD | 0.227 |
 | Mean Actual LGD  | 0.194 |
-| RMSE | 0.000724 |
-| MAE | 0.0036 |
+| RMSE | 0.201 |
+| MAE | 0.142 |
 | Spearman Correlation | 0.608 |
 | Pearson Correlation | 0.641 |
 
