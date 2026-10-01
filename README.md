@@ -132,7 +132,7 @@ $$
 p_t = h(1-h)^{t-1}
 $$
 
-This probability should be interpreted as loan's conditional probability of not defaulting $(1-h)$ during the first $(t-1)$ months followed by a default with conditional probability $h$ during the last month. The corresponding cumulative probability of default by month \(t\) is:
+This probability should be interpreted as loan's conditional probability of not defaulting $(1-h)$ during the first $(t-1)$ months followed by a default with conditional probability $h$ during the last month. The corresponding cumulative probability of default by month $t$ is:
 
 $$
 PD_t = 1-(1-h)^t
