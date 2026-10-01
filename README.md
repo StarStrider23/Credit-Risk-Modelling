@@ -1,5 +1,3 @@
-# REPORT STATUS: ALMOST FINISHED
-
 # Credit Risk Modelling
 
 By Alexsey Chernichenko. September 2026.
