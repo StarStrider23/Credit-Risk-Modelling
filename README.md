@@ -553,7 +553,7 @@ The second table shows how the raw and calibrated probabilities vary month-by-mo
 | 2025-02 |       30 |       91773  |           0.0052% |    0.0288%                   |             0.0337% |
 | 2025-03 |       23 |       91075  |           0.0044% |    0.0270%                   |             0.0469% |
 
-## Reestimated XGBoost PD Models
+## Reestimated XGBoost PD Model
 
 For the reestimated PD Modelling, the previous training set was extended up 2024. The corresponding test set remained unchanged and the new results are presented below. For this part, only XGBoost was considered.
 
@@ -579,7 +579,7 @@ For the reestimated PD Modelling, the previous training set was extended up 2024
 The first table shows the average risk characteristics across ten PD deciles, with the 10th group having the highest risk. Higher risk groups have lower credit scores and higher DTI, LTV, ELTV and LGD while average Loan Age and EAD decrease.
 
 | PD Decile |  Mean PD | Mean Credit Score | Mean DTI | Mean LTV | Mean ELTV | Mean Loan Age |   Mean EAD |
-| --------: | -------- | ----------------- | -------- | -------- | --------- | ------------- | ---------- |
+| --------- | -------- | ----------------- | -------- | -------- | --------- | ------------- | ---------- |
 |         1 | 0.000001 |            770.00 |    30.54 |    57.49 |     17.73 |        131.11 | 165276.24  |
 |         2 | 0.000003 |            767.60 |    31.18 |    64.30 |     19.97 |        131.23 | 143510.58  |
 |         3 | 0.000004 |            765.26 |    31.68 |    66.65 |     20.78 |        131.28 | 133965.33  |
@@ -595,16 +595,16 @@ The second table shows the distribution of ECL across these risk groups. ECL is 
 
 | PD Decile | Loans |  Mean PD | Mean LGD |   Mean EAD | Mean ECL | Total ECL | ECL Share | Mean Stage |
 | --------- | ----- | -------- | -------- | ---------- | -------- | --------- | --------- | ---------- |
-|         1 | 8,302 | 0.000001 | 0.092632 | 165276.24 | 0.016463 |    136.67 |  0.001473 |   1.000000 |
-|         2 | 8,301 | 0.000003 | 0.100978 | 143510.58 | 0.033300 |    276.42 |  0.002979 |   1.000241 |
-|         3 | 8,301 | 0.000004 | 0.106653 | 133965.33 | 0.052964 |    439.65 |  0.004738 |   1.000723 |
-|         4 | 8,301 | 0.000007 | 0.107038 | 129925.92 | 0.078039 |    647.80 |  0.006981 |   1.002530 |
-|         5 | 8,302 | 0.000010 | 0.110169 | 123758.79 | 0.115935 |    962.49 |  0.010372 |   1.001686 |
-|         6 | 8,301 | 0.000015 | 0.113210 | 117196.66 | 0.169146 |  1404.08  |  0.015130 |   1.004819 |
-|         7 | 8,301 | 0.000024 | 0.116853 | 113516.03 | 0.268496 |  2228.78  |  0.024017 |   1.007108 |
-|         8 | 8,301 | 0.000042 | 0.120015 | 106101.43 | 0.440184 |  3653.97  |  0.039375 |   1.013251 |
-|         9 | 8,301 | 0.000088 | 0.129452 | 100880.38 | 1.956776 | 16243.19  |  0.175034 |   1.025780 |
-|        10 | 8,302 | 0.000835 | 0.160908 |  91470.87 | 8.047119 | 66807.18  |  0.719903 |   1.076969 |
+|         1 | 8302  | 0.000001 | 0.092632 | 165276.24 | 0.016463 |    136.67 |  0.001473 |   1.000000 |
+|         2 | 8301  | 0.000003 | 0.100978 | 143510.58 | 0.033300 |    276.42 |  0.002979 |   1.000241 |
+|         3 | 8301  | 0.000004 | 0.106653 | 133965.33 | 0.052964 |    439.65 |  0.004738 |   1.000723 |
+|         4 | 8301  | 0.000007 | 0.107038 | 129925.92 | 0.078039 |    647.80 |  0.006981 |   1.002530 |
+|         5 | 8302  | 0.000010 | 0.110169 | 123758.79 | 0.115935 |    962.49 |  0.010372 |   1.001686 |
+|         6 | 8301  | 0.000015 | 0.113210 | 117196.66 | 0.169146 |  1404.08  |  0.015130 |   1.004819 |
+|         7 | 8301  | 0.000024 | 0.116853 | 113516.03 | 0.268496 |  2228.78  |  0.024017 |   1.007108 |
+|         8 | 8301  | 0.000042 | 0.120015 | 106101.43 | 0.440184 |  3653.97  |  0.039375 |   1.013251 |
+|         9 | 8301  | 0.000088 | 0.129452 | 100880.38 | 1.956776 | 16243.19  |  0.175034 |   1.025780 |
+|        10 | 8302  | 0.000835 | 0.160908 |  91470.87 | 8.047119 | 66807.18  |  0.719903 |   1.076969 |
 
 # Discussion
 
@@ -624,9 +624,21 @@ On the validation set, LightGBM achieved the strongest results among the machine
 
 Based on the test performance and the smaller deterioration between validation and test periods, XGBoost was selected as the final LGD model. This choice prioritises temporal robustness over the strongest validation set performance which is particularly relevant given the relatively small number of observed default events available for LGD modelling.
 
-## Calibration
+## XGBoost PD Calibration
 
-## PD Model Reestimation
+Since the XGBoost was selected to be the main PD model, but its raw probabilities were far from being accurate, calibration was necessary. Logit calibration was applied to the XGBoost PD predictions using the validation set to adjust the raw probabilities while preserving the ranking of observations. In the test set, the observed default rate was 0.000312 while the raw average predicted probability was substantially lower at around 0.0000512. After the calibration, the average predicted probability increased to 0.000283 bringing it considerably closer to the observed default rate. The monthly results also show that calibrated probabilities are closer to the observed default rates, although the difference is still noticeable.
+
+As expected, calibration did not change ROC-AUC or PR-AUC, since the relative ordering of the predictions remains unchanged. Instead, the improvement is shown through lower Brier Score and Log Los. Although the improvement in Brier Score was relatively small, the reduction in Log Loss was more noticeable. Lower Log Loss indicates that the predicted probabilities are on average better aligned with the observed outcomes, while also penalising predictions that assign very low probability to events that subsequently occur.
+
+Overall, the calibration adjusted the raw PD estimates so that they are now more representative of the observed default frequency. However, as the remaining differences between predicted and observed default rates remain, the probabilities are not perfectly calibrated.
+
+## Reestimated XGBoost PD Model
+
+As the original PD model showed temporal deterioration and the analysis did not identify a method that fully eliminated it, the PD model was reestimated for the subsequent ECL calculations. Since the ECL computation will be for March 2026, extending the training period from 2015–2023 to 2015–2024 is expected to make the model more representative of the more recent observations. The reestimated model showed a substantial improvement when evaluated on the first three months of 2025 with average PR-AUC increasing from 0.189 to 0.624. The ROC-AUC score was also improved, now being at 0.98 vs 0.938 previously. 
+
+The raw predicted probabilities also improved compared with the original model, although they remained less accurate than the calibrated probabilities. Importantly, temporal deterioration was not eliminated and the monthly performance table demonstrates how monthly PR-AUC declines from 0.745 in January 2025 to 0.588 in February and 0.511 in March.
+
+Finally, it is worth mentioning that although the LGD model also showed some temporal deterioration, reestimating it did not produce a noticeable improvement in the test set performance. Therefore, the previously established LGD model was left untouched for the final ECL calculations, while the reestimated PD model was used to generate the March 2026 PD estimates.
 
 ## ECL
 
