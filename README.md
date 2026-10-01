@@ -618,6 +618,12 @@ Feature and population drift were also investigated using PSI. Some features, pa
 
 ## LGD Modelling
 
+Being the baseline LGD model, the Mean Historical Average provided the weakest overall performance, as expected, since it does not learn from loan level characteristics and instead assigns the historical average LGD. The machine learning models provided better predictive performance by capturing relationships between borrower, loan and collateral characteristics and realised loss severity.
+
+On the validation set, LightGBM achieved the strongest results among the machine learning models, with an RMSE of 0.193 and MAE of 0.137. XGBoost was slightly weaker, with an RMSE of 0.201 and MAE of 0.142, while Random Forest performed worst among the advanced models. However, LightGBM showed greater deterioration when evaluated on the test set. Although the RMSE values of LightGBM and XGBoost became relatively similar, LightGBM had weaker MAE and correlation results with the annual analysis also showing a more pronounced deterioration.
+
+Based on the test performance and the smaller deterioration between validation and test periods, XGBoost was selected as the final LGD model. This choice prioritises temporal robustness over the strongest validation set performance which is particularly relevant given the relatively small number of observed default events available for LGD modelling.
+
 ## Calibration
 
 ## PD Model Reestimation
