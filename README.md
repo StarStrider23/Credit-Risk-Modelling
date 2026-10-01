@@ -188,7 +188,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1259" height="740" alt="Снимок экрана — 2026-09-30 в 15 41 12" src="https://github.com/user-attachments/assets/9571c283-4a79-4923-9cee-a175a94106a2" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.943 |
 | PR-AUC  | 0.0765 |
@@ -203,7 +203,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1259" height="765" alt="Снимок экрана — 2026-09-30 в 15 42 43" src="https://github.com/user-attachments/assets/e67433c2-2a57-468f-ba49-1c71df55e8e7" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.933 |
 | PR-AUC  | 0.0504 |
@@ -240,7 +240,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1250" height="733" alt="Снимок экрана — 2026-09-30 в 14 57 52" src="https://github.com/user-attachments/assets/1279c9bb-219a-42df-8313-048268e3be83" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.948 |
 | PR-AUC  | 0.351 |
@@ -255,7 +255,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1241" height="755" alt="Снимок экрана — 2026-09-30 в 14 58 30" src="https://github.com/user-attachments/assets/808ed2cd-3a20-4b13-82f5-2755bfe5b521" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.938 |
 | PR-AUC  | 0.189 |
@@ -292,7 +292,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1258" height="750" alt="Снимок экрана — 2026-09-30 в 15 53 14" src="https://github.com/user-attachments/assets/5472e3d6-b52d-415d-881d-03f592b7bc0c" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.933 |
 | PR-AUC  | 0.383 |
@@ -307,7 +307,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1249" height="739" alt="Снимок экрана — 2026-09-30 в 15 54 05" src="https://github.com/user-attachments/assets/65e72f2c-09dc-45f3-896c-c19287ad19b6" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.881 |
 | PR-AUC  | 0.0748 |
@@ -344,7 +344,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1254" height="756" alt="Снимок экрана — 2026-09-30 в 16 02 24" src="https://github.com/user-attachments/assets/b2c2c266-1a83-473f-8d2e-66c4daf62c82" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.955 |
 | PR-AUC  | 0.380 |
@@ -359,7 +359,7 @@ For each of the four models, the results are divided into three subsections - Va
 
 <img width="1262" height="776" alt="Снимок экрана — 2026-09-30 в 16 03 18" src="https://github.com/user-attachments/assets/8b7931a5-1c26-43bf-b879-d70215278ccd" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.931 |
 | PR-AUC  | 0.172 |
@@ -402,7 +402,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1277" height="788" alt="Снимок экрана — 2026-09-30 в 17 35 56" src="https://github.com/user-attachments/assets/53366230-9b2f-4fa8-bf12-6d9a8f3f003f" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.270 |
 | Mean Actual LGD  | 0.194 |
@@ -415,7 +415,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1251" height="747" alt="Снимок экрана — 2026-09-30 в 17 36 14" src="https://github.com/user-attachments/assets/c79b9315-62f4-43a4-8a27-c34f57ad2003" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.270 |
 | Mean Actual LGD  | 0.290 |
@@ -440,7 +440,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1237" height="778" alt="Снимок экрана — 2026-09-30 в 16 41 48" src="https://github.com/user-attachments/assets/fa497ff8-b5ef-42ab-86c9-29b4a61d8631" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.227 |
 | Mean Actual LGD  | 0.194 |
@@ -453,7 +453,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1240" height="741" alt="Снимок экрана — 2026-09-30 в 16 42 08" src="https://github.com/user-attachments/assets/3954565a-ab01-4dc3-9d50-183e4a5bad31" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.252 |
 | Mean Actual LGD  | 0.290 |
@@ -464,7 +464,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 ### Annual Performance
 
-| Year |  Average LGD | Average LGD Prediction |  rmse  |  mae  |
+| Year |  Average LGD | Average LGD Prediction |  RMSE  |  MAE  |
 | ---- | ------------ | ---------------------- | ------ | ----- |
 | 2021 |   0.0394     |    0.114               |  0.093 | 0.074 |
 | 2022 |   0.188      |    0.233               |  0.182 | 0.134 |
@@ -478,7 +478,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1252" height="775" alt="Снимок экрана — 2026-09-30 в 17 50 25" src="https://github.com/user-attachments/assets/a4d829e9-6052-4315-bb5f-68606d9c9f59" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.261 |
 | Mean Actual LGD  | 0.194 |
@@ -491,7 +491,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1271" height="761" alt="Снимок экрана — 2026-09-30 в 17 50 45" src="https://github.com/user-attachments/assets/a907e09f-1380-419d-b499-7baae00173d9" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.270 |
 | Mean Actual LGD  | 0.290 |
@@ -516,7 +516,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1260" height="787" alt="Снимок экрана — 2026-09-30 в 17 55 44" src="https://github.com/user-attachments/assets/b3b81018-a767-45dd-b269-e1a6549cf92d" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.230 |
 | Mean Actual LGD  | 0.194 |
@@ -529,7 +529,7 @@ The Realised vs Actual LGD plot should be regarded as following: each scatter po
 
 <img width="1258" height="756" alt="Снимок экрана — 2026-09-30 в 17 56 01" src="https://github.com/user-attachments/assets/ad19c881-8f0e-451a-aa40-8500e91aea46" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | Mean Predicted LGD | 0.255 |
 | Mean Actual LGD  | 0.290 |
@@ -577,7 +577,7 @@ For the reestimated PD Modelling, the previous training set was extended up 2024
 
 <img width="1248" height="782" alt="Снимок экрана — 2026-09-30 в 18 08 55" src="https://github.com/user-attachments/assets/4a8899d3-a3dc-4473-85a3-0ba40425c19a" />
 
-|         |       |
+|  Metric | Result|
 | ------- | ----- |
 | ROC-AUC | 0.980 |
 | PR-AUC  | 0.624 |
